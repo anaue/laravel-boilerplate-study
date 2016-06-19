@@ -1,0 +1,67 @@
+application: redeciclo-corp
+version: master
+runtime: php55
+api_version: 1
+
+handlers:
+
+- url: /.*
+  script: /public/index.php
+
+- url: /assets/(.*\.(htm$|html$|css$|js$|png$))
+  static_files: public/assets/\1
+  upload: public/assets/(.*\.(htm$|html$|css$|js$|png$))
+  application_readable: true
+
+skip_files:
+        - ^(.*/)?#.*#$
+        - ^(.*/)?.*~$
+        - ^(.*/)?.*\.py$
+        - ^(.*/)?.*/RCS/.*$
+        - ^(.*/)?\.(?!env).*$
+        - ^(.*/)?node_modules.*$
+        - ^(.*/)?_ide_helper\.php$
+        - ^(.*/)?\.DS_Store$
+
+env_variables:
+  JWT_SECRET: lalalaFWEcQmMPhEic2A5puKAK4zr1A2hM9bSx
+  GAE_SKIP_GCS_INIT: false
+
+  APP_ENV: local
+  APP_DEBUG: true
+  APP_KEY: 12345678901234567890123456789012
+  APP_LOCALE: en
+  APP_FALLBACK_LOCALE: en
+
+  DB_CONNECTION: mysql
+  DB_HOST: 127.0.0.1
+  DB_PORT: 3306
+  DB_DATABASE: redeciclo-corp
+  DB_USERNAME: root
+  # DB_PASSWORD: ''
+
+  SESSION_DRIVER: file
+  QUEUE_DRIVER: sync
+  AUTH_GUARD: token
+
+  MAIL_DRIVER: smtp
+  MAIL_HOST: mailtrap.io
+  MAIL_PORT: 2525
+  #MAIL_USERNAME: 
+  #MAIL_PASSWORD: 
+  #MAIL_ENCRYPTION: 
+
+  API_PREFIX: api
+  API_VERSION: v1
+  #API_STRICT: 
+  API_DEBUG: true
+  #API_NAME:
+  API_SIGNUP_TOKEN_RELEASE: 1
+  API_RESET_TOKEN_RELEASE: 1
+  API_RECOVERY_EMAIL_SUBJECT: example@domain.com
+
+  CACHE_DRIVER: file
+  CACHE_SERVICES_FILE: false
+  CACHE_CONFIG_FILE: false
+  CACHE_ROUTES_FILE: false
+  CACHE_COMPILED_VIEWS: false

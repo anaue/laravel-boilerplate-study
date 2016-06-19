@@ -9,7 +9,9 @@
         "laravel/framework": "5.2.*",
 	    "tymon/jwt-auth": "0.5.*",
         "dingo/api": "1.0.*@dev",
-        "barryvdh/laravel-cors": "^0.7.1"
+        "barryvdh/laravel-cors": "^0.7.1",
+        "shpasser/gae-support-l5": "^1.4",
+        "vlucas/phpdotenv": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
