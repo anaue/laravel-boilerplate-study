@@ -17,9 +17,17 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('group_id', 255);
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::table('users')->insert(array(
+                'id'       => '1',
+                'name'    => 'guest',
+                'email'    => 'guest@mail.com',
+                'password' => 'password',
+                'group_id' => '2'
+            ));
     }
 
     /**

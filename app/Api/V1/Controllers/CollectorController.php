@@ -19,12 +19,12 @@ class CollectorController extends Controller
     public function index()
     {
         $currentUser = $this->currentUser();
-
-        return $currentUser
-            ->delegation()
-            ->orderBy('created_at', 'DESC')
-            ->get()
-            ->toArray();
+        syslog(LOG_INFO, "user " . json_encode($currentUser) );
+        $collectors = $currentUser->delegation()->get();
+        if( !empty($collectors) ){
+            return $collectors;
+        }else
+            abort(404);
     }
 
     public function show(Request $request, $id)

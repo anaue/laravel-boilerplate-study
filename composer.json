@@ -11,7 +11,8 @@
         "dingo/api": "1.0.*@dev",
         "barryvdh/laravel-cors": "^0.7.1",
         "shpasser/gae-support-l5": "^1.4",
-        "vlucas/phpdotenv": "^2.3"
+        "vlucas/phpdotenv": "^2.3",
+        "signes/acl": "^2.0.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
